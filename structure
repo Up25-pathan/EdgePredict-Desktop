@@ -1,0 +1,28 @@
+EdgePredict-Desktop/
+│
+├── src-tauri/                  [NEW: THE RUST BACKEND]
+│   ├── binaries/               [NEW: LOCATION FOR COMPILED ENGINE]
+│   │   └── engine-x86_64-pc-windows-msvc.exe  <-- Your C++ Binary
+│   │
+│   ├── src/
+│   │   └── main.rs             <-- The "Glue" Code (Spawns C++ Engine)
+│   │
+│   ├── tauri.conf.json         <-- App Config (Icons, Permissions, Sidecar)
+│   ├── Cargo.toml              <-- Rust Dependencies
+│   └── icons/                  <-- App Icons (.ico, .png)
+│
+├── src/                        [EXISTING: YOUR REACT UI]
+│   ├── components/             <-- (Unchanged)
+│   ├── pages/                  <-- (Unchanged)
+│   ├── services/
+│   │   └── api.js              <-- [UPDATED] Calls Tauri instead of Axios
+│   ├── App.js
+│   └── index.js
+│
+├── public/                     [EXISTING]
+│   ├── index.html
+│   └── electron.js             <-- [DELETE THIS: We don't need Electron]
+│
+├── package.json                [UPDATED: Scripts to launch Tauri]
+├── postcss.config.js
+└── tailwind.config.js
