@@ -1,0 +1,23 @@
+[package]
+name = "edgepredict_desktop"
+version = "0.1.0"
+description = "EdgePredict Desktop Engine"
+authors = ["Umar Pathan"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# 1. Main Tauri Framework (v2)
+tauri = { version = "2", features = [] }
+
+# 2. Plugins (Required for File I/O and Running Engine)
+tauri-plugin-shell = "2"
+tauri-plugin-fs = "2"
+
+# 3. Data Handling
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
