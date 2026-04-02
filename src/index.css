@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- EDGE STUDIO GLOBAL STYLES --- */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+html {
+  font-size: 14px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(900px 600px at -10% -20%, rgba(14, 165, 164, 0.22), transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, rgba(245, 158, 11, 0.18), transparent 55%),
+    linear-gradient(180deg, #0b1220 0%, #0f1b2a 100%);
+  background-color: theme('colors.studio.canvas');
+  background-attachment: fixed;
+  color: theme('colors.studio.text.main');
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(230, 237, 245, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(230, 237, 245, 0.07) 1px, transparent 1px);
+  }
+
+  .app-ambient {
+    background:
+      radial-gradient(1200px 800px at -10% -20%, rgba(14, 165, 164, 0.28), transparent 60%),
+      radial-gradient(900px 700px at 110% 0%, rgba(245, 158, 11, 0.22), transparent 55%),
+      radial-gradient(700px 600px at 20% 120%, rgba(51, 92, 103, 0.20), transparent 60%),
+      linear-gradient(180deg, #0b1220 0%, #0f1b2a 100%);
+  }
+
+  .app-dots {
+    background-image: radial-gradient(rgba(230, 237, 245, 0.10) 1px, transparent 1px);
+  }
+}
+
+/* --- MINIMAL SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  /* Slate-300 */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  /* Slate-400 */
+}
